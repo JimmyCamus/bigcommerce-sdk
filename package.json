@@ -1,10 +1,11 @@
 {
-  "name": "bigcommerce-sdk",
+  "name": "bigcommerce-sdk-monorepo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "turbo dev"
+    "dev": "turbo dev",
+    "build-sdk": "turbo build --filter='bigcommercesdk'"
   },
   "keywords": [],
   "author": "",
