@@ -34,42 +34,20 @@ git clone https://github.com/JimmyCamus/bigcommerce-sdk.git
 
 ### Install dependencies
 
-- PNPM
-
-  ```sh
-  pnpm i
-  ```
-
-- or NPM
-
-  ```sh
-  npm i
-  ```
+```sh
+pnpm i
+```
 
 ### Build the sdk package
 
-- PNPM
+```sh
+pnpm build-sdk
+```
 
-  ```sh
-  pnpm build-sdk
-  ```
-
-- or NPM
-
-  ```sh
-  npm build-sdk
-  ```
 
 ### Run the project
 
-- PNPM
+```sh
+pnpm dev
+```
 
-  ```sh
-  pnpm dev
-  ```
-
-- or NPM
-
-  ```sh
-  npm dev
-  ```
