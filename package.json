@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "turbo dev",
-    "build-sdk": "turbo build --filter=bigcommercesdk"
+    "build": "turbo build --filter=bigcommercesdk"
   },
   "keywords": [],
   "author": "",

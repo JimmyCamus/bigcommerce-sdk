@@ -2,11 +2,11 @@
 <img src="https://github.com/JimmyCamus/bigcommerce-sdk/assets/86853554/6d6ba44e-dad9-4061-932b-525a9af97970"/>
 <h1>[WIP] UnOfficial Bigcommerce SDK</h1>
   
-<p>This project stores a bigcommerce sdk and an api that uses this sdk to mirror a demo example of how it would be used.</p> 
+<p>This project stores a bigcommerce sdk and an api that uses this sdk to mirror a demo example of how it would be used.</p>
 </div>
 
-
 ## 🛠️ Stack
+
 - [Turborepo](https://turbo.build/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Nestjs](https://nestjs.com/)
@@ -26,6 +26,7 @@
   ```sh
   npm install npm@latest -g
   ```
+
 ### Clone the repo
 
 ```sh
@@ -41,13 +42,11 @@ pnpm i
 ### Build the sdk package
 
 ```sh
-pnpm build-sdk
+pnpm build
 ```
-
 
 ### Run the project
 
 ```sh
 pnpm dev
 ```
-
