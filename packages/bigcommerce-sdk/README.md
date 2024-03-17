@@ -2,7 +2,6 @@
 
 This project is an sdk of the bigcommerce api, which seeks to abstract the complexity of setting up http requests.
 
-
 ## Features
 
 - [ ] Products
@@ -16,7 +15,6 @@ This project is an sdk of the bigcommerce api, which seeks to abstract the compl
 - [ ] Product modifiers
 - [ ] Product variants
 - [ ] Product varitns options
-
 
 ## 🛠️ Stack
 
