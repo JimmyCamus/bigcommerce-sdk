@@ -18,6 +18,23 @@ export class ProductsService {
     );
   }
 
+  async getProducts() {
+    this.logger.warn(`Trying get products`);
+
+    let products: CatalogResponse<Product[]>;
+
+    try {
+      products = await this.bigcommerce.getProducts({ include: ['variants'] });
+    } catch (error: unknown) {
+      this.logger.error(error);
+      throw new InternalServerErrorException('Something went wrong');
+    }
+
+    this.logger.log(`Request successfully resolved`);
+
+    return products;
+  }
+
   async getProductById(id: string) {
     this.logger.warn(`Trying to get a product with id ${id}`);
 

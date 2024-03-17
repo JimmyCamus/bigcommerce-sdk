@@ -5,6 +5,11 @@ import { ProductsService } from '../services/products.service';
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
+  @Get()
+  getProducts() {
+    return this.productsService.getProducts();
+  }
+
   @Get(':id')
   getProduct(@Param('id') id: string) {
     return this.productsService.getProductById(id);
