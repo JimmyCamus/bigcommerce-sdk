@@ -1,4 +1,10 @@
-import { handleGetProductById } from "..";
+import {
+  CatalogResponse,
+  GetProductsQueryParams,
+  Product,
+  handleGetProductById,
+} from "..";
+import { handleGetProducts } from "../products/get-products";
 
 export interface BigCommerceOptions {
   clientId: string;
@@ -12,7 +18,7 @@ export class BigCommerceSDK {
     this.options = options;
   }
 
-  async getProductById(productId: string) {
+  async getProductById(productId: string): Promise<CatalogResponse<Product>> {
     const product = await handleGetProductById({
       authToken: this.options.authToken,
       storeHash: this.options.storeHash,
@@ -20,5 +26,17 @@ export class BigCommerceSDK {
     });
 
     return product;
+  }
+
+  async getProducts(
+    params?: GetProductsQueryParams
+  ): Promise<CatalogResponse<Product[]>> {
+    const products = await handleGetProducts({
+      authToken: this.options.authToken,
+      storeHash: this.options.storeHash,
+      params,
+    });
+
+    return products;
   }
 }
