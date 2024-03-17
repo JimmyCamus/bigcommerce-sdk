@@ -1,13 +1,3 @@
-export interface BigCommerceOptions {
-  clientId: string;
-  projectId: string;
-  accessToken: string;
-}
-
-export class BigCommerceSDK {
-  private options: BigCommerceOptions;
-  constructor(options: BigCommerceOptions) {
-    this.options = options;
-    console.log(this.options);
-  }
-}
+export * from "./client";
+export * from "./common";
+export * from "./products";
