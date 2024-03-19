@@ -1,9 +1,11 @@
 import {
   CatalogResponse,
+  CreateProductBody,
   GetProductsQueryParams,
   Product,
   handleGetProductById,
 } from "..";
+import { handleCreateProduct } from "../products/create-product";
 import { handleGetProducts } from "../products/get-products";
 
 export interface BigCommerceOptions {
@@ -38,5 +40,17 @@ export class BigCommerceSDK {
     });
 
     return products;
+  }
+
+  async createProduct(
+    productData: CreateProductBody
+  ): Promise<CatalogResponse<Product>> {
+    const product = await handleCreateProduct({
+      authToken: this.options.authToken,
+      storeHash: this.options.storeHash,
+      productData,
+    });
+
+    return product;
   }
 }

@@ -4,6 +4,7 @@ interface FetcherEntries {
   options: {
     headers: HeadersInit;
     method: string;
+    body?: BodyInit;
   };
 }
 
