@@ -2,6 +2,7 @@ import { GetProductsQueryParams, Product } from ".";
 import { CatalogResponse } from "..";
 import { fetcher } from "../utils";
 import { queryToString } from "../utils/query-to-string";
+import { PRODUCT_PREFIX } from "./constants";
 
 interface GetProducsEntries {
   storeHash: string;
@@ -17,7 +18,7 @@ export const handleGetProducts = async (
   const queryString = queryToString(params);
 
   const res = await fetcher({
-    path: `products?${queryString}`,
+    path: `${PRODUCT_PREFIX}?${queryString}`,
     storeHash,
     options: {
       method: "GET",

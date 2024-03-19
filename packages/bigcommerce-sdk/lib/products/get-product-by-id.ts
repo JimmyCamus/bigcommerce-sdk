@@ -1,5 +1,6 @@
 import { CatalogResponse } from "../common/types";
 import { fetcher } from "../utils";
+import { PRODUCT_PREFIX } from "./constants";
 import { Product } from "./types";
 
 interface GetProductByIdEntries {
@@ -14,7 +15,7 @@ export const handleGetProductById = async (
   const { productId, storeHash, authToken } = entries;
 
   const res = await fetcher({
-    path: `products/${productId}`,
+    path: `${PRODUCT_PREFIX}/${productId}`,
     storeHash,
     options: {
       method: "GET",

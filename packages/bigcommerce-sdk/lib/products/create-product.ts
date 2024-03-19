@@ -1,5 +1,6 @@
 import { CreateProductBody } from ".";
 import { fetcher } from "../utils";
+import { PRODUCT_PREFIX } from "./constants";
 
 interface CreateProductEntries {
   productData: CreateProductBody;
@@ -11,7 +12,7 @@ export const handleCreateProduct = async (entries: CreateProductEntries) => {
   const { productData, storeHash, authToken } = entries;
 
   const res = await fetcher({
-    path: `products`,
+    path: `${PRODUCT_PREFIX}`,
     storeHash,
     options: {
       method: "POST",

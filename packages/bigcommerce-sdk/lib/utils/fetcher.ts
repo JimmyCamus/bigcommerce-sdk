@@ -10,7 +10,7 @@ interface FetcherEntries {
 
 export const fetcher = (entries: FetcherEntries) => {
   const { storeHash, path, options } = entries;
-  const url = `https://api.bigcommerce.com/stores/${storeHash}/v3/catalog/${path}`;
+  const url = `https://api.bigcommerce.com/stores/${storeHash}/${path}`;
 
   return fetch(url, options);
 };
