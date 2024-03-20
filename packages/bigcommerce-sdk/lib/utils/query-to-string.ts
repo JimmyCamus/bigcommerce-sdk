@@ -10,5 +10,5 @@ export const queryToString = (params: any): string => {
     }
   }
 
-  return queryString;
+  return queryString.slice(0, -1);
 };

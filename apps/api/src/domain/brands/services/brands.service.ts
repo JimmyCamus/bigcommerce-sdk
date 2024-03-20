@@ -18,6 +18,21 @@ export class BrandsService {
     );
   }
 
+  async getBrands(): Promise<CatalogResponse<Brand[]>> {
+    let brands: CatalogResponse<Brand[]>;
+
+    try {
+      brands = await this.bigcommerce.getBrands({ limit: 3 });
+    } catch (error) {
+      this.logger.error(error);
+      throw new InternalServerErrorException('Something went wrong');
+    }
+
+    this.logger.log(`Request successfully resolved`);
+
+    return brands;
+  }
+
   async getBrandById(id: string): Promise<CatalogResponse<Brand>> {
     let brand: CatalogResponse<Brand>;
 

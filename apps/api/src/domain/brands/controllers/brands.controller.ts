@@ -5,8 +5,13 @@ import { BrandsService } from '../services/brands.service';
 export class BrandsController {
   constructor(private readonly brandsService: BrandsService) {}
 
+  @Get()
+  getBrands() {
+    return this.brandsService.getBrands();
+  }
+
   @Get(':id')
-  getProduct(@Param('id') id: string) {
+  getBrand(@Param('id') id: string) {
     return this.brandsService.getBrandById(id);
   }
 }
