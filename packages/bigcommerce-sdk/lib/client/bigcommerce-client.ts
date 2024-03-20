@@ -1,8 +1,10 @@
 import {
+  Brand,
   CatalogResponse,
   CreateProductBody,
   GetProductsQueryParams,
   Product,
+  handleGetBrandById,
   handleGetProductById,
 } from "..";
 import { handleCreateProduct } from "../products/create-product";
@@ -52,5 +54,15 @@ export class BigCommerceSDK {
     });
 
     return product;
+  }
+
+  async getBrandById(brandId: string): Promise<CatalogResponse<Brand>> {
+    const brand = await handleGetBrandById({
+      authToken: this.options.authToken,
+      storeHash: this.options.storeHash,
+      brandId,
+    });
+
+    return brand;
   }
 }
